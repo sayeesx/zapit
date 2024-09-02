@@ -1,0 +1,432 @@
+/* Importing the font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #0d00ff;
+  --secondary-color: #ffffff;
+  --text-color: #ffffff;
+  --border-radius: 8px;
+  --spacing-unit: 20px;
+  --card-gap: 96px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-color);
+  line-height: 1.6;
+  animation: gradientBG 15s ease infinite; /* Adjusted duration for smoother animation */
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the container takes up the full height of the viewport */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--spacing-unit) * 3) 0 calc(var(--spacing-unit) * 6); /* Reduced padding to fit content */
+  flex: 1; /* Expands to fill available space */
+}
+
+.header {
+  text-align: center;
+  margin-top: calc(var(--spacing-unit) * 6);
+}
+
+.header h1 {
+  font-size: 7rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-unit);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.header p {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: calc(var(--spacing-unit) / 2);
+  animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: var(--spacing-unit);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  overflow-x: auto;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.top-bar a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin-right: var(--spacing-unit);
+  font-weight: 500;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-bar a.active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.top-bar a:hover {
+  color: var(--primary-color);
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background-clip: text;
+  text-fill-color: transparent;
+  transform: scale(1.1);
+}
+
+.choice, .design-ideas {
+  text-align: center;
+  max-width: 10in; /* Set the width to 5 inches */
+  width: 5in; /* Ensure the width is exactly 5 inches */
+  height: 3in; /* Set the height to 3 inches */
+  margin: 0 auto; /* Center the container horizontally */
+  background: rgba(34, 34, 34, 0.8);
+  padding: calc(var(--spacing-unit) * 1.5); /* Smaller padding */
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+  margin-bottom: calc(var(--spacing-unit) * 2); /* Adjusted margin */
+  position: relative; /* For bevel effect */
+  overflow: hidden; /* Ensure bevel effect doesn't overflow */
+  animation: slideIn 0.5s ease-in-out, gradientBG 15s ease infinite; /* Added gradient animation */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes gradientBG {
+  0% { background: linear-gradient(45deg, #001f3f, #000000); }
+  50% { background: linear-gradient(45deg, #000000, #001f3f); }
+  100% { background: linear-gradient(45deg, #001f3f, #000000); }
+}
+
+.choice::before, .design-ideas::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  z-index: 0;
+  transition: background 0.5s ease-in-out;
+  opacity: 0.5;
+}
+
+.choice:hover::before, .design-ideas:hover::before {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2));
+}
+
+.choice > *, .design-ideas > * {
+  position: relative;
+  z-index: 1;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-unit);
+  color: var(--text-color);
+}
+
+button {
+  background: linear-gradient(45deg, var(--primary-color), #3730a3);
+  color: #ffffff;
+  border: none;
+  padding: calc(var(--spacing-unit) / 1.5) calc(var(--spacing-unit) * 2);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: calc(var(--spacing-unit) / 2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #3730a3, var(--primary-color));
+  transform: scale(1.05);
+}
+
+textarea,
+input[type="text"],
+input[type="email"] {
+  width: 50%;
+  padding: calc(var(--spacing-unit));
+  border: 1px solid #444444;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-unit);
+  resize: vertical;
+  background-color: #333333;
+  color: var(--text-color);
+}
+
+.contact-form button {
+  width: 100%;
+}
+
+.submissions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.submissions li {
+  padding: var(--spacing-unit);
+  border-bottom: 1px solid #555555;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--card-gap);
+  padding: calc(var(--spacing-unit) * 2);
+  margin-bottom: 0; /* Removed bottom margin to prevent scrolling */
+}
+
+.plan-card {
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+  margin: var(--spacing-unit);
+}
+
+.plan-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card:hover .plan-card-inner {
+  transform: rotateY(180deg);
+}
+
+.plan-card-front,
+.plan-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--spacing-unit) * 2);
+  box-sizing: border-box;
+}
+
+.plan-card-front {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.plan-card-back {
+  background: #222222;
+  transform: rotateY(180deg);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.plan-logo {
+  width: 90%;
+  height: auto;
+  max-width: 500px;
+  opacity: 0.8;
+  margin-bottom: var(--spacing-unit);
+}
+
+.plan-heading {
+  color: var(--text-color);
+  margin-bottom: calc(var(--spacing-unit) / 2);
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Spacer for additional space between content */
+.spacer {
+  height: 150px;
+}
+
+/* Container for the main content and footer */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* Fills available space */
+}
+
+/* Footer styling */
+.footer {
+  background-color: rgba(34, 34, 34, 0.9);
+  color: var(--text-color);
+  text-align: center;
+  padding: var(--spacing-unit);
+  border-top: 1px solid #444444;
+  font-size: 0.9rem;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  gap: 20px;
+}
+
+.nav-container button {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-container button:hover {
+  transform: scale(1.1);
+  background-color: var(--primary-color);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: var(--border-radius);
+}
+
+.contact-wrapper h2 {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 2);
+  }
+
+  .plan-card {
+    width: 90%;
+    margin-bottom: var(--spacing-unit);
+  }
+
+  .header h1 {
+    font-size: 4rem;
+  }
+
+  .header p {
+    font-size: 1.2rem;
+  }
+
+  .top-bar {
+    padding: calc(var(--spacing-unit) / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .top-bar a,
+  .top-bar button {
+    margin-right: calc(var(--spacing-unit) / 2);
+  }
+}
+
+.nav-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin-right: var(--spacing-unit);
+  font-weight: 500;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background-clip: text;
+  text-fill-color: transparent;
+  transform: scale(1.1);
+}
