@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⚡ Zapit – Startup Launch Platform in 25 Hours
 
-## Getting Started
+**Zapit** is a fast-moving development service focused on **delivering modern mobile apps and websites for startups within 25 hours**. Whether you're launching your MVP, pitching to investors, or validating an idea — Zapit gets you live faster than ever.
 
-First, run the development server:
+With a built-in **subscription/payment system**, tech-stack choices, and branded designs, Zapit helps startups move from idea to product without the usual wait.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 What We Offer
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+✅ **Web & Mobile App Launch in 25 Hours**  
+✅ **React, React Native, Next.js, and TailwindCSS**  
+✅ **Stripe-based Subscription Integration**  
+✅ **Customizable UI components for speed and consistency**  
+✅ **Fully responsive websites**  
+✅ **Startup-friendly backend via Supabase / Firebase**  
+✅ **Branding, theming, and rapid deployment included**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## 💼 Ideal For
 
-To learn more about Next.js, take a look at the following resources:
+- Startup founders with tight timelines  
+- MVPs for investor demos or accelerators  
+- Hackathon projects  
+- Product validation & landing pages  
+- Subscription-based SaaS & apps
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+| Area         | Stack                           |
+|--------------|----------------------------------|
+| Web Frontend | Next.js / React + Tailwind CSS   |
+| Mobile       | React Native (Expo / bare)       |
+| Backend      | Supabase / Firebase              |
+| Payments     | Stripe (Subscriptions & Webhooks)|
+| Auth         | Supabase Auth / Firebase Auth    |
+| Hosting      | Vercel, Netlify, or Render       |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 💳 Payment System
+
+We use **Stripe Checkout** and **Stripe Subscriptions** with webhook handling for:
+
+- One-time or recurring payments  
+- Plan-based access (Free, Pro, Premium)  
+- Secure, real-time subscription management  
+- Invoice and billing portal integration
+
+---
+
+## 🌐 How It Works
+
+1. **Onboard your idea** (we collect basic info and preferences)  
+2. **Choose your stack and features**  
+3. **Pay via Stripe**  
+4. **Go live in 25 hours or less**  
+5. **Optional: Ongoing support or scaling plans**
+
+---
+
+## 📦 Project Status
+
+> **Currently in private beta**  
+We are working with early startups to fine-tune delivery workflows and expand integrations.
+
+---
+
+## 📬 Contact Us
+
+Want to launch your idea fast?  
+📧 Email: `launch@zapit.dev`  
+🌐 Website: [www.zapit.dev](https://www.zapit.dev) *(coming soon)*
+
+---
+
+## 🧑‍💻 Built by Sayees & Team
+
+From fast MVPs to scalable startups — we help you **ship in hours, not weeks**.
+
+© 2025 Zapit Technologies
